@@ -134,14 +134,37 @@ txtFirstName.Text, txtMiddleInitial.Text);
             StudentInformationClass.setContactNo = "+63" + ContactNo(txtContactNo.Text.Substring(1));
             StudentInformationClass.setAge = Age(txtAge.Text);
             StudentInformationClass.setBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
-            frmConfirmation frm = new frmConfirmation();
-            frm.ShowDialog();
+           
             }
 
-            catch 
+            catch (FormatException eq)
             {
+                MessageBox.Show("Format Exception!");
+            }
+
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Argument Null Exception!");
 
             }
+
+            catch (OverflowException)
+            {
+                MessageBox.Show("Overflow Exception!");
+
+            }
+
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Index Out Of Range Exception!");
+
+            }
+            finally
+            {
+                frmConfirmation frm = new frmConfirmation();
+                frm.ShowDialog();
+            }
+           
         }
     }
 }
