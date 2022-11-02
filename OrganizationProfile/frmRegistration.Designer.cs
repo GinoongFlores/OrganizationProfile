@@ -34,7 +34,7 @@ namespace OrganizationProfile
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.txtStudentNo = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@ namespace OrganizationProfile
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMiddleInitial = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.cbPrograms = new System.Windows.Forms.ComboBox();
@@ -103,13 +103,13 @@ namespace OrganizationProfile
             this.label5.Text = "Birthday";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // dateTimePicker1
+            // datePickerBirthday
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(163, 213);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 25);
-            this.dateTimePicker1.TabIndex = 2;
+            this.datePickerBirthday.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerBirthday.Location = new System.Drawing.Point(163, 213);
+            this.datePickerBirthday.Name = "datePickerBirthday";
+            this.datePickerBirthday.Size = new System.Drawing.Size(212, 25);
+            this.datePickerBirthday.TabIndex = 2;
             // 
             // txtStudentNo
             // 
@@ -185,13 +185,13 @@ namespace OrganizationProfile
             this.txtFirstName.Size = new System.Drawing.Size(165, 25);
             this.txtFirstName.TabIndex = 3;
             // 
-            // textBox2
+            // txtMiddleInitial
             // 
-            this.textBox2.Location = new System.Drawing.Point(665, 134);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(41, 25);
-            this.textBox2.TabIndex = 3;
+            this.txtMiddleInitial.Location = new System.Drawing.Point(665, 134);
+            this.txtMiddleInitial.Multiline = true;
+            this.txtMiddleInitial.Name = "txtMiddleInitial";
+            this.txtMiddleInitial.Size = new System.Drawing.Size(41, 25);
+            this.txtMiddleInitial.TabIndex = 3;
             // 
             // label10
             // 
@@ -223,6 +223,9 @@ namespace OrganizationProfile
             // cbGender
             // 
             this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.cbGender.Location = new System.Drawing.Point(445, 169);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(165, 21);
@@ -237,6 +240,7 @@ namespace OrganizationProfile
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // frmRegistration
             // 
@@ -247,12 +251,12 @@ namespace OrganizationProfile
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.cbPrograms);
             this.Controls.Add(this.txtAge);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtMiddleInitial);
             this.Controls.Add(this.txtContactNo);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtStudentNo);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.datePickerBirthday);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -265,6 +269,7 @@ namespace OrganizationProfile
             this.Controls.Add(this.label1);
             this.Name = "frmRegistration";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,7 +282,7 @@ namespace OrganizationProfile
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePickerBirthday;
         private System.Windows.Forms.TextBox txtStudentNo;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtAge;
@@ -286,7 +291,7 @@ namespace OrganizationProfile
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMiddleInitial;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtContactNo;
         private System.Windows.Forms.ComboBox cbPrograms;
