@@ -54,9 +54,15 @@ namespace OrganizationProfile
 
         public string FullName(string LastName, string FirstName, string MiddleInitial)
         {
-            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") && Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") && Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
             {
                 _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+            }
+
+            else
+            {
+                MessageBox.Show("Invalid Name Format!");
+
             }
 
             return _FullName;
